@@ -1,1 +1,856 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>เที่ยวเชียงใหม่ 2026 | Chiang Mai Travel</title>
+
+<meta name="description"
+content="รวมสถานที่เที่ยวเชียงใหม่ คาเฟ่ ที่พัก รถเช่า และบริการเดินทางทั่วเชียงใหม่">
+
+<link rel="icon"
+href="YOUR-LOGO.png">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Prompt',sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#f8fff8 0%,
+#f2faf2 45%,
+#edf7ed 100%
+);
+
+color:#2f3a2f;
+overflow-x:hidden;
+line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 40px;
+
+background:rgba(255,255,255,0.30);
+
+backdrop-filter:blur(18px);
+
+border-bottom:
+1px solid rgba(255,255,255,0.35);
+
+z-index:9999;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo-img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+
+border:2px solid #fff;
+
+box-shadow:
+0 0 20px rgba(76,175,80,0.15);
+}
+
+.logo-text h1{
+font-size:20px;
+font-weight:600;
+color:#2e7d32;
+}
+
+.logo-text p{
+font-size:12px;
+color:#6b8f6d;
+}
+
+.menu{
+display:flex;
+gap:22px;
+}
+
+.menu a{
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+color:#2f4f2f;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#4caf50;
+}
+
+/* ================= HERO ================= */
+
+header{
+position:relative;
+
+width:100%;
+height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#f8fff8,
+#eef8ee,
+#e8f5e9
+);
+}
+
+/* ช่องเว้นภาพแนวตั้ง */
+
+.hero-bg{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+
+/* เว้นช่องไว้ */
+opacity:0.10;
+
+filter:
+blur(1px)
+brightness(1.1);
+
+z-index:1;
+}
+
+/* Overlay */
+
+.overlay{
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+to bottom,
+rgba(255,255,255,0.10),
+rgba(240,248,240,0.35),
+rgba(232,245,233,0.50)
+);
+
+z-index:2;
+}
+
+/* กล่องข้อความ */
+
+.hero{
+position:relative;
+z-index:3;
+
+width:90%;
+max-width:850px;
+
+text-align:center;
+
+padding:45px;
+
+border-radius:35px;
+
+background:
+rgba(255,255,255,0.22);
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 10px 35px rgba(76,175,80,0.08);
+}
+
+/* หัวข้อ */
+
+.hero h2{
+font-size:3.1em;
+font-weight:600;
+
+color:#1b5e20;
+
+margin-bottom:16px;
+
+letter-spacing:1px;
+}
+
+/* คำอธิบาย */
+
+.hero p{
+font-size:1em;
+font-weight:400;
+
+color:#567256;
+
+margin-bottom:35px;
+}
+
+/* ================= POPUP BUTTONS ================= */
+
+.popup-contact{
+display:flex;
+flex-direction:column;
+gap:14px;
+
+align-items:center;
+}
+
+/* ปุ่ม */
+
+.popup-btn{
+position:relative;
+
+width:360px;
+max-width:90%;
+
+padding:13px 22px;
+
+border-radius:60px;
+
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+overflow:hidden;
+
+color:white;
+
+transition:0.35s;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* เอฟเฟกต์ */
+
+.popup-btn::before{
+content:"";
+
+position:absolute;
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.25),
+transparent
+);
+
+transition:0.6s;
+}
+
+.popup-btn:hover::before{
+left:100%;
+}
+
+.popup-btn:hover{
+transform:translateY(-4px);
+}
+
+/* โทร */
+
+.call-btn{
+background:
+linear-gradient(
+90deg,
+#ef5350,
+#e53935
+);
+}
+
+/* LINE */
+
+.line-btn{
+background:
+linear-gradient(
+90deg,
+#00c853,
+#43ea7a
+);
+}
+
+/* WhatsApp */
+
+.whatsapp-btn{
+background:
+linear-gradient(
+90deg,
+#25d366,
+#128c7e
+);
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.title h2{
+font-size:2em;
+font-weight:600;
+color:#2e7d32;
+margin-bottom:10px;
+}
+
+.title p{
+font-size:14px;
+color:#7b8d7b;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+background:white;
+
+border-radius:28px;
+
+overflow:hidden;
+
+box-shadow:
+0 8px 22px rgba(0,0,0,0.05);
+
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.placeholder{
+width:100%;
+height:230px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#edf7ed,
+#f7fff7
+);
+
+color:#8aa88a;
+
+font-size:15px;
+font-weight:500;
+}
+
+.card-content{
+padding:24px;
+}
+
+.card-content h3{
+font-size:1.3em;
+font-weight:600;
+
+color:#2e7d32;
+
+margin-bottom:10px;
+}
+
+.card-content p{
+font-size:14px;
+color:#6f7d6f;
+}
+
+/* ================= CONTACT BOX ================= */
+
+.contact-box{
+padding:55px;
+
+border-radius:35px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,0.60),
+rgba(240,248,240,0.90)
+);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.05);
+
+text-align:center;
+}
+
+.contact-box h2{
+font-size:2em;
+font-weight:600;
+
+color:#2e7d32;
+
+margin-bottom:12px;
+}
+
+.contact-box p{
+font-size:14px;
+color:#688168;
+margin-bottom:30px;
+}
+
+/* ================= BLOG ================= */
+
+.blog{
+background:white;
+
+padding:28px;
+
+border-radius:28px;
+
+box-shadow:
+0 8px 22px rgba(0,0,0,0.05);
+
+transition:0.3s;
+}
+
+.blog:hover{
+transform:translateY(-8px);
+}
+
+.blog h3{
+font-size:1.2em;
+font-weight:600;
+
+color:#2e7d32;
+
+margin-bottom:12px;
+}
+
+.blog p{
+font-size:14px;
+color:#718071;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+padding:50px 20px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#2e7d32,
+#388e3c
+);
+
+color:white;
+}
+
+footer h3{
+font-size:1.6em;
+font-weight:600;
+margin-bottom:12px;
+}
+
+footer p{
+font-size:14px;
+opacity:0.9;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.navbar{
+padding:15px;
+flex-direction:column;
+gap:12px;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+gap:14px;
+}
+
+.hero{
+padding:30px;
+}
+
+.hero h2{
+font-size:2.2em;
+}
+
+.hero p{
+font-size:0.95em;
+}
+
+.popup-btn{
+width:100%;
+font-size:14px;
+}
+
+.title h2{
+font-size:1.7em;
+}
+
+.contact-box{
+padding:35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="logo-area">
+
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1000018391.png?w=1024"
+alt="โลโก้เชียงใหม่"
+class="logo-img">
+
+<div class="logo-text">
+<h1>เที่ยวเชียงใหม่</h1>
+<p>Chiang Mai Travel</p>
+</div>
+
+</div>
+
+<div class="menu">
+<a href="  https://mongkol2010nk-dev.github.io/mongkol111/">หน้าแรก</a>
+<a href="https://mongkol2010nk-dev.github.io/mongkol111/">ที่เที่ยว</a>
+<a href="#">คาเฟ่</a>
+<a href="#">บริการรถ</a>
+<a href="#">ติดต่อ</a>
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<header>
+
+<!-- เว้นช่องภาพพื้นหลังแนวตั้ง -->
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1529.jpg?w=687"
+alt="พื้นหลังเชียงใหม่"
+class="hero-bg">
+
+<div class="overlay"></div>
+
+<div class="hero">
+
+<h2>เที่ยวเชียงใหม่</h2>
+
+<p>
+เมืองแห่งธรรมชาติ คาเฟ่ วัฒนธรรม และการเดินทางสุดประทับใจ
+</p>
+
+<!-- ปุ่ม Pop Up -->
+
+<div class="popup-contact">
+
+<a href="tel:0636385818"
+class="popup-btn call-btn">
+📞 โทร 063-638-5818
+</a>
+
+<a href="https://line.me/ti/p/N3Gtj86LCL"
+class="popup-btn line-btn">
+💬 ติดต่อ LINE
+</a>
+
+<a href="https://wa.me/66636385818"
+class="popup-btn whatsapp-btn">
+🟢 ติดต่อ WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= TRAVEL ================= -->
+
+<section>
+
+<div class="title">
+<h2>ที่เที่ยวเชียงใหม่ยอดนิยม 2026: ครบทุกไลฟ์สไตล์ เที่ยวแบบส่วนตัวกับบริการรถเหมามืออาชีพ</h2>
+<p>เชียงใหม่ไม่เคยทำให้ใครผิดหวัง ไม่ว่าคุณจะมองหาความสงบในธรรมชาติ หรือความชิคของคาเฟ่ในตัวเมือง นี่คือ 5 แลนด์มาร์คที่คุณไม่ควรพลาด และจะดียิ่งขึ้นหากคุณมีคนขับรถส่วนตัวที่รู้เส้นทางจริง ช่วยให้ทริปของคุณราบรื่นและมีระดับ</p>
+</div>
+
+<div class="grid">
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1553-1.png?w=300"
+alt="ดอยอินทนนท์"
+class="card-img">
+
+<div class="card-content">
+
+<h3>ดอยอินทนนท์: สัมผัสยอดดอยที่สูงที่สุดในประเทศไทย</h3>
+
+<p>
+จุดหมายอันดับ 1 ที่สายธรรมชาติห้ามพลาด สัมผัสไอหมอกและอากาศหนาวเย็นตลอดปี พร้อมชมความงดงามของพระมหาธาตุคู่ เดินทางขึ้นดอยสะดวกและปลอดภัยด้วยบริการรถเช่าพร้อมคนขับที่เชี่ยวชาญเส้นทางโค้งบนดอย
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1554-1.png?w=300" 
+alt="วัดพระธาตุดอยสุเทพ"
+class="card-img">
+
+
+<div class="card-content">
+
+<h3>วัดพระธาตุดอยสุเทพ: ศรัทธาคู่บ้านคู่เมืองเชียงใหม่</h3>
+
+<p>
+แลนด์มาร์คสำคัญที่ต้องมาสักการะเพื่อความเป็นสิริมงคล พร้อมชมทัศนียภาพเมืองเชียงใหม่จากมุมสูงที่สวยงามที่สุด บริการรถเช่าส่วนตัวพร้อมรับ-ส่งถึงจุดหมาย ช่วยให้คุณประหยัดเวลาและไม่ต้องกังวลเรื่องที่จอดรถ
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1555-1.png?w=300"
+alt="หมู่บ้านแม่กำปอง"
+class="card-img">
+
+
+<div class="card-content">
+
+<h3>หมู่บ้านแม่กำปอง: สวรรค์ของคนรักวิถีสโลว์ไลฟ์</h3>
+
+<p>
+สัมผัสความเงียบสงบในหมู่บ้านกลางหุบเขา จิบกาแฟท่ามกลางสายน้ำและวิถีชุมชนที่ยังคงความดั้งเดิม ให้การเดินทางสู่แม่กำปองเป็นเรื่องง่าย ด้วยรถเช่าส่วนตัวที่คอยดูแลคุณตลอดทั้งวัน
+</p>
+
+</div>
+
+</div>
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1556-1.png?w=300" 
+alt="ย่านนิมมานเหมินท์"
+class="card-img">
+
+
+<div class="card-content">
+
+<h3>ย่านนิมมานเหมินท์ & One Nimman: แหล่งรวมไลฟ์สไตล์สุดชิค</h3>
+
+<p>
+ศูนย์กลางความบันเทิงระดับพรีเมียม ทั้งร้านอาหาร Fine Dining คาเฟ่ดีไซน์เก๋ และแหล่งช้อปปิ้งสินค้าดีไซน์ เที่ยวชิลล์ได้ทุกร้านแบบไม่ต้องหาที่จอดรถ ให้คนขับมืออาชีพดูแลคุณตลอดทริปนิมมานฯ
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://mongkol20010.wordpress.com/wp-content/uploads/2025/10/1557-1.png?w=300"
+alt="ประตูท่าแพ"
+class="card-img">
+
+
+<div class="card-content">
+
+<h3>ประตูท่าแพ: จุดเช็คอินระดับตำนานของเมืองเก่า</h3>
+
+<p>
+ประตูเมืองโบราณที่เป็นจุดเริ่มต้นของการท่องเที่ยวเชียงใหม่ แหล่งรวมสตรีทฟู้ดและตลาดที่สะท้อนเสน่ห์ของเมืองเก่าได้อย่างสมบูรณ์แบบ
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICE ================= -->
+
+<section>
+
+<div class="contact-box">
+
+<h2>บริการรถเที่ยวเชียงใหม่</h2>
+
+<p>
+บริการรถเที่ยวเชียงใหม่ พร้อมคนขับมืออาชีพ เดินทางสะดวก ปลอดภัย และตรงเวลา เหมาะสำหรับเที่ยวดอยสุเทพ ดอยอินทนนท์ แม่กำปอง และสถานที่ยอดนิยมทั่วเชียงใหม่
+📞 จองง่าย ติดต่อได้ทันทีผ่าน โทรศัพท์ / LINE / WhatsApp ให้เราดูแลการเดินทางของคุณแบบส่วนตัว สบายใจตลอดทริป ไม่ต้องกังวลเรื่องเส้นทางหรือการขับรถเอง
+👉 เหมาะสำหรับทริปครอบครัว คู่รัก และกลุ่มเพื่อน ที่ต้องการความสะดวกและความเป็นส่วนตัวสูงสุด
+</p>
+
+<div class="popup-contact">
+
+<a href="tel:0636385818"
+class="popup-btn call-btn">
+📞 โทร 063-638-5818
+</a>
+
+<a href="https://line.me/ti/p/N3Gtj86LCL"
+class="popup-btn line-btn">
+💬 ติดต่อ LINE
+</a>
+
+<a href="https://wa.me/66636385818"
+class="popup-btn whatsapp-btn">
+🟢 ติดต่อ WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BLOG ================= -->
+
+<section>
+
+<div class="title">
+<h2>บทความท่องเที่ยวเชียงใหม่</h2>
+<p>เชียงใหม่คือจุดหมายปลายทางด้านการท่องเที่ยวที่ครบที่สุดของภาคเหนือ ทั้งธรรมชาติ วัฒนธรรม และคาเฟ่สวย ๆ ที่รอให้คุณค้นพบ เราคัดสรรข้อมูลที่เที่ยวที่น่าเชื่อถือ อัปเดตจริง เพื่อช่วยให้คุณวางแผนการเดินทางได้ง่ายและคุ้มค่าที่สุด
+หากต้องการความสะดวกในการเดินทาง เรามีบริการรถเที่ยวเชียงใหม่พร้อมคนขับมืออาชีพ ให้คุณเที่ยวได้แบบส่วนตัว ปลอดภัย และไม่พลาดทุกจุดเช็กอินสำคัญ
+📞 ติดต่อเราได้ทันทีผ่าน โทรศัพท์ / LINE / WhatsApp เพื่อเริ่มต้นทริปเชียงใหม่ของคุณอย่างมั่นใจและสะดวกที่สุด 🚗🌿</p>
+</div>
+
+<div class="grid">
+
+<div class="blog">
+
+<h3>10 ที่เที่ยวเชียงใหม่</h3>
+
+<p>
+เชียงใหม่เป็นหนึ่งในจุดหมายปลายทางยอดนิยมของประเทศไทยที่นักท่องเที่ยวทั่วโลกให้ความสนใจ ด้วยความหลากหลายของแหล่งท่องเที่ยว ทั้งธรรมชาติ ภูเขา วัดวาอาราม และวัฒนธรรมท้องถิ่นที่โดดเด่น สถานที่ห้ามพลาด ได้แก่ ดอยสุเทพ ดอยอินทนนท์ แม่กำปอง ม่อนแจ่ม และถนนคนเดินที่เต็มไปด้วยสีสันของเมืองเหนือ เหมาะสำหรับทั้งการท่องเที่ยวแบบครอบครัว คู่รัก และสายถ่ายรูปที่ต้องการเก็บภาพความทรงจำสวย ๆ ของเชียงใหม่
+</p>
+
+</div>
+
+<div class="blog">
+
+<h3>คาเฟ่วิวภูเขา</h3>
+
+<p>
+คาเฟ่วิวภูเขาในเชียงใหม่ถือเป็นจุดเช็กอินยอดนิยมของนักท่องเที่ยวสายคาเฟ่และสายธรรมชาติ ด้วยบรรยากาศที่รายล้อมไปด้วยภูเขา ป่าไม้ และอากาศบริสุทธิ์ ทำให้เหมาะสำหรับการพักผ่อนและถ่ายภาพสวย ๆ หลายคาเฟ่มีการออกแบบสไตล์มินิมอล ผสมผสานกับธรรมชาติอย่างลงตัว ไม่ว่าจะเป็นคาเฟ่บนดอยหรือคาเฟ่ริมเขา ทุกแห่งล้วนมีเอกลักษณ์เฉพาะตัวที่ช่วยเพิ่มประสบการณ์การท่องเที่ยวเชียงใหม่ให้สมบูรณ์แบบมากยิ่งขึ้น
+</p>
+
+</div>
+
+<div class="blog">
+
+<h3>เที่ยวเชียงใหม่หน้าหนาว</h3>
+
+<p>
+ช่วงฤดูหนาวของเชียงใหม่ถือเป็นฤดูกาลท่องเที่ยวที่ดีที่สุดของปี อากาศเย็นสบายและมีโอกาสเห็นทะเลหมอกในยามเช้า โดยเฉพาะบนดอยสูง เช่น ดอยอินทนนท์ ดอยอ่างขาง และม่อนแจ่ม นักท่องเที่ยวสามารถสัมผัสอากาศหนาวเย็น อุณหภูมิต่ำ และวิวธรรมชาติที่สวยงามราวกับต่างประเทศ นอกจากนี้ยังมีกิจกรรมท่องเที่ยวมากมาย เช่น กางเต็นท์ ชมพระอาทิตย์ขึ้น และถ่ายภาพบรรยากาศสุดโรแมนติก เหมาะสำหรับผู้ที่ต้องการประสบการณ์ท่องเที่ยวเชียงใหม่ที่น่าจดจำที่สุด
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h3>เที่ยวเชียงใหม่ 2026: สัมผัสทุกประสบการณ์อย่างเหนือระดับ</h3>
+
+<p>
+รวมที่เที่ยว คาเฟ่ และเส้นทางยอดนิยม จัดทริปส่วนตัวได้อิสระ เดินทางปลอดภัยด้วยบริการรถเหมานำเที่ยวพร้อมคนขับมืออาชีพที่รู้ใจคุณที่สุด
+​พร้อมดูแลคุณตลอดทริป:
+
+
+<br>
+<p>mongkol2010nk@gmail.com..( ขอสงวนลิขสิทธิ์ )</p>
+
+<p>
+📞 063-638-5818
+</p>
+
+</footer>
+
+</body>
+</html>
